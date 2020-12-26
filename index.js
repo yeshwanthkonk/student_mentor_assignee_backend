@@ -1,12 +1,13 @@
 const express = require("express")
 const mongodb = require("mongodb")
 const cors = require("cors")
+require('dotenv').config()
 
 const app = express();
 const port = process.env.PORT || 3000;
 const mongoClient = mongodb.MongoClient;
 const object_id = mongodb.ObjectID;
-const mongodb_url = "mongodb://127.0.0.1:27017/";
+const mongodb_url = process.env.mongodb_url;
 
 app.use(express.json());
 app.use(cors());
